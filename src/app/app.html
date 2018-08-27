@@ -6,10 +6,26 @@
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+    <ion-list class="lista-semi-acordeon">
+
+      <ion-list-header *ngFor="let p of pages; let i = index;" no-lines no-padding>
+        <ion-item *ngIf="!p.hasChildren">
+          <button style="width:100%;" menuClose ion-item (click)="openPage(p) || !p.hasChildren ">{{p.title}}</button>
+        </ion-item>
+        <!-- Hay que considerar que esto va a variar dependiendo del perfil, podría hacerse visible o no dependiendo del mismo, o 
+      va a haber que pensar una manera de ponerlo en otra vista propia de cada perfil que no sea app-html -->
+        <ion-item *ngIf="p.hasChildren">
+          <button ion-item style="width:100%;" (click)="mostrarSubmenu()" details-none [ngClass]="{'seccion-activa': subMenuVisible, 'seccion': !subMenuVisible}">
+            <ion-icon item-left name="arrow-forward" *ngIf="!subMenuVisible"></ion-icon>
+            <ion-icon item-left name="arrow-down" *ngIf="subMenuVisible"></ion-icon>
+            {{p.title}}
+          </button>
+        </ion-item>
+        <ion-list *ngIf="subMenuVisible && p.hasChildren">
+          <!-- considerar que si se tienen submenúes habría que tener otro nivel mas de control y sacar la propiedad 'menuClose' del boton para que no cierre el menu cuando se clickea -->
+          <button menuClose submenu-item ion-item *ngIf="subMenuVisible" (click)="openPage(p)" class="subseccion1">Consultorios</button>
+        </ion-list>
+      </ion-list-header>
     </ion-list>
   </ion-content>
 
