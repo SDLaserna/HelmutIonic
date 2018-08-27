@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ConsultoriosPage } from '../pages/consultorios/consultorios';
+import { LoginPage } from './../pages/login/login';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +14,7 @@ import { ConsultoriosPage } from '../pages/consultorios/consultorios';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any, hasChildren:boolean}>;
 
@@ -27,6 +28,7 @@ export class MyApp {
       { title: 'Inicio', component: HomePage, hasChildren : false },
       { title: 'Lista de ejemplo', component: ListPage, hasChildren : false },
       { title: 'Consultorios', component: ConsultoriosPage, hasChildren: true }
+      
     ];
 
   }
