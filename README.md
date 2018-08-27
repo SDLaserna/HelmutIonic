@@ -1,2 +1,2 @@
-# IonicTutorial
-Es un repositorio que cree para hacer el tutorial de Ionic framework
+# HelmutIonic
+Repositorio con el fin de realizar las pruebas para migrar tecnologías del proyecto Helmut a Ionic
