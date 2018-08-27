@@ -1,0 +1,7 @@
+{
+  "name": "HelmutIonic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
