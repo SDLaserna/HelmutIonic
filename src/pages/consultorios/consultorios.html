@@ -1,18 +1,26 @@
-<!--
-  Generated template for the ConsultoriosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>consultorios</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      Consultorios {{listaDeConsultorios}}
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let s of listaDeSensores">
+      <p>Probando...</p>
+      <h2>{{ c.dispositivo.nombreDeSensor | uppercase }}</h2>
+      <p>{{ c.temperatura }}</p>
+    </ion-item>
+  </ion-list>
 
+  <!-- <ion-list>
+    <ion-item *ngFor="let c of listaDeConsultorios">
+      <p>Probando...</p>
+      <h2>{{ c.name | uppercase }}</h2>
+      <p>{{ c.address }}</p>
+    </ion-item>
+  </ion-list> -->
 </ion-content>

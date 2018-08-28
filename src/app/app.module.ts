@@ -9,6 +9,10 @@ import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { ConsultoriosServiceProvider } from '../providers/consultorios-service/consultorios-service';
+import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -19,6 +23,8 @@ import { StatusBar } from '@ionic-native/status-bar';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -32,7 +38,8 @@ import { StatusBar } from '@ionic-native/status-bar';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    ConsultoriosServiceProvider
   ]
 })
 export class AppModule {}
