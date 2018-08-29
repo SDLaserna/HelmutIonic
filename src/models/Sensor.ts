@@ -1,10 +1,11 @@
 class Sensor {
 
-    idMedicion: number;
-    dispositivo: Dispositivo;
-    dioxidoCarbono: number;
-    temperatura: number;
-    fecha: null;
+    estado : string;
+    codigo : string;
+    bateria: number;
+    ubicacion : Position;
+    idSensor :number;
+    nombreSensor:string;
 
     constructor() { }
 

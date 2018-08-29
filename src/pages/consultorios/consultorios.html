@@ -1,26 +1,24 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Consultorios {{listaDeConsultorios}}
+      Consultorios
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-list>
-    <ion-item *ngFor="let s of listaDeSensores">
-      <p>Probando...</p>
-      <h2>{{ c.dispositivo.nombreDeSensor | uppercase }}</h2>
-      <p>{{ c.temperatura }}</p>
+  <ion-list *ngFor="let c of listaDeConsultorios;">
+    <ion-item>
+      {{c.name | uppercase}}
     </ion-item>
   </ion-list>
 
-  <!-- <ion-list>
-    <ion-item *ngFor="let c of listaDeConsultorios">
-      <p>Probando...</p>
-      <h2>{{ c.name | uppercase }}</h2>
-      <p>{{ c.address }}</p>
+
+  <!-- ejemplo sensores -->
+  <!-- <ion-list *ngFor="let s of listaDeSensores;">
+    <ion-item >
+      {{s.nombreSensor | uppercase}}
     </ion-item>
   </ion-list> -->
+
 </ion-content>
