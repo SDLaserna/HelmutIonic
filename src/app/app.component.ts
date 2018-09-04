@@ -7,7 +7,7 @@ import { ConsultoriosPage } from '../pages/consultorios/consultorios';
 import { LoginPage } from './../pages/login/login';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { timer } from "rxjs/observable/timer";
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,6 +19,8 @@ export class MyApp {
   pages: Array<{title: string, component: any, hasChildren:boolean}>;
 
   subMenuVisible : boolean = false;
+
+  mostrarAnimacionInicio : boolean = true;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -39,6 +41,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      timer(3000).subscribe(()=>this.mostrarAnimacionInicio=false);
+
     });
   }
 

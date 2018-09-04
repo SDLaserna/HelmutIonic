@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,17 +23,17 @@
   </ion-row>
 
   <div class="login-box">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
+    <form (ngSubmit)="login(user)" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
 
             <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="user.email" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required></ion-input>
             </ion-item>
 
           </ion-list>
@@ -42,10 +42,15 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" color="dark" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button class="submit-btn" full type="submit" color="primary" [disabled]="!registerForm.form.valid">Login</button>
         </ion-col>
       </ion-row>
 
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button full (click)="irARegistro()" color="secondary">Registrarse</button>
+        </ion-col>
+      </ion-row>
     </form>
   </div>
 </ion-content>

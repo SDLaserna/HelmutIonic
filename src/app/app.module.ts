@@ -12,34 +12,46 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { ConsultoriosServiceProvider } from '../providers/consultorios-service/consultorios-service';
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
-
+import { HTTP } from "@ionic-native/http"; 
+import { AngularFireModule } from "angularfire2";
+import { FIREBASE_CONFIG } from './app.firebase.config';
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { ConsultoriosPage } from '../pages/consultorios/consultorios';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    ConsultoriosPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG), /*--> Para configurar con nuestro proyecto de firebase */
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    ConsultoriosPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    ConsultoriosServiceProvider
+    ConsultoriosServiceProvider,
+    HTTP
   ]
 })
 export class AppModule {}
