@@ -29,11 +29,21 @@ export class LoginPage {
   async login(user : User ){  /* Es async porque es un promise */
     try {
       const result = this.authFirebase.auth.signInWithEmailAndPassword(user.email, user.password);  
-      console.log(result);
-      if(result){
+      this.authFirebase.auth.onAuthStateChanged(function(user) {
+        if (user) {
+          console.log(user);
+          console.log('El usuario está logueado');
+          this.showLoading();
+          this.navCtrl.setRoot(HomePage);
+        } else {
+          console.log('El usuario está deslogueado');
+        }
+      });
+      /* console.log(result); */
+      /* if(result){
         this.showLoading();
         this.navCtrl.setRoot(HomePage);
-      }
+      } */
     } catch (error) {
       console.error(error);
       this.showError(error);

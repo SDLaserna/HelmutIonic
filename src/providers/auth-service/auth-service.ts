@@ -52,14 +52,16 @@ export class AuthServiceProvider {
     return this.currentUser;
   }
 
-  public logout() {
+/*   public logout() {
     return Observable.create(observer => {
       this.currentUser = null;
       observer.next(true);
       observer.complete();
     });
+  } */
+  
+  public logout(user) { /* El parámetro es un objeto que implementa la interface firebase.user */
+    user = null;
   }
-  
-  
 
 }
