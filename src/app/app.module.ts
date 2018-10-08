@@ -18,6 +18,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { ConsultoriosPage } from '../pages/consultorios/consultorios';
 import { RegisterPage } from '../pages/register/register';
+import { InterceptorModule } from '../interceptors/interceptor.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RegisterPage } from '../pages/register/register';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG), /*--> Para configurar con nuestro proyecto de firebase */
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    InterceptorModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
