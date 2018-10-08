@@ -1,4 +1,34 @@
-<!-- Generated template for the CardBuscadorComponent component -->
-<div>
-  Este es el card buscador
-</div>
+<ion-card>
+  <ion-card-header>
+    Paciente
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/profile_image.png" />
+        </ion-avatar>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Apellido</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Nombres</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>DNI</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-buttons end style="margin-top:2%;">
+        <button ion-button>
+          Buscar
+        </button>
+        <button ion-button>
+            Listar todos
+          </button>
+      </ion-buttons>
+  </ion-card-content>
+</ion-card>
