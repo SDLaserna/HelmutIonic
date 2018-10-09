@@ -1,14 +1,15 @@
 import { IonicModule } from 'ionic-angular';
 import { NgModule } from '@angular/core';
 import { CardBuscadorComponent } from './card-buscador/card-buscador';
+import { ModificarDatosPacienteComponent } from './modificar-datos-paciente/modificar-datos-paciente';
 import { HistoriaClinicaPacienteComponent } from './historia-clinica-paciente/historia-clinica-paciente';
 import { PacienteListaComponent } from './paciente-lista/paciente-lista';
 @NgModule({
 	declarations: [CardBuscadorComponent,
-    PacienteListaComponent,HistoriaClinicaPacienteComponent],
+    PacienteListaComponent,HistoriaClinicaPacienteComponent,ModificarDatosPacienteComponent],
 	imports: [IonicModule.forRoot({HistoriaClinicaPacienteComponent,CardBuscadorComponent,
-		PacienteListaComponent})],
+		PacienteListaComponent,ModificarDatosPacienteComponent})],
 	exports: [CardBuscadorComponent,
-    PacienteListaComponent,HistoriaClinicaPacienteComponent]
+    PacienteListaComponent,HistoriaClinicaPacienteComponent,ModificarDatosPacienteComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
