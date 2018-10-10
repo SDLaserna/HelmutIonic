@@ -1,14 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Slides } from 'ionic-angular';
-import { SIGCONT } from 'constants';
 
-
-/**
- * Generated class for the ModificarDatosPacienteComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'modificar-datos-paciente',
   templateUrl: 'modificar-datos-paciente.html'

@@ -1,0 +1,35 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-list-header color="secondary" style="font-weight:bold; font-size: 16px;">Paciente</ion-list-header>
+      <ion-buttons end style="margin-top:2%;">
+        <button ion-button outline>
+          <ion-icon name="eye"></ion-icon>
+          Ver turnos reservados
+        </button>
+        <button ion-button outline>
+          <ion-icon name="person-add"></ion-icon>
+          Crear paciente
+        </button>
+      </ion-buttons>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/profile_image.png" />
+        </ion-avatar>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Paciente</ion-label>
+        <ion-input type="search" placeholder="Ingrese para buscar..."></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Historia clínica</ion-label>
+        <ion-textarea readonly="true" placeholder="Sin especificar"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Libreta activa</ion-label>
+        <ion-input type="text" readonly="true"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
