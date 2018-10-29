@@ -19,6 +19,8 @@ export class ModificarDatosPacienteComponent implements AfterViewInit{
   cantidadTabaco:string;
   frecuenciaTabaco:string;
   frecuenciaDeportes:string;
+  parentezco:string;
+  frecuenciaDeAlimentacion:string;
   
   constructor() {
     console.log('Hello ModificarDatosPacienteComponent Component');
