@@ -1,0 +1,39 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      
+      <ion-list-header color="secondary" style="font-weight:bold; font-size: 16px;">Profesional de la salud</ion-list-header>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/profile_image.png" />
+        </ion-avatar>
+      </ion-item>
+
+      <ion-buttons start>
+        <button *ngIf="busqPorEspecialidad == false" ion-button outline (click)="seBuscaPorEspecialidad()">Buscar por
+          especialidad</button>
+        <button *ngIf="busqPorEspecialidad == true" ion-button outline (click)="seBuscaPorProfesional()">Buscar por
+          profesional</button>
+      </ion-buttons>
+
+      <ion-item *ngIf="busqPorEspecialidad == false">
+        <ion-icon name="search"></ion-icon>
+        <ion-label stacked>Apellido o N° de matrícula</ion-label>
+        <ion-input type="search" placeholder="Ingrese para buscar..." ([ngModel])="nomOmatricula"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="busqPorEspecialidad == true">
+        <ion-icon name="search"></ion-icon>
+        <ion-label stacked>Nombre de la especialidad</ion-label>
+        <ion-input type="search" placeholder="Ingrese para buscar..." ([ngModel])="especialidad"></ion-input>
+      </ion-item>
+
+      <ion-buttons start>
+          <button ion-button round (click)="visualizarListaDeMedicos()">Ver disponibilidad</button>
+      </ion-buttons>
+
+    </ion-list>
+
+  </ion-card-content>
+</ion-card>
