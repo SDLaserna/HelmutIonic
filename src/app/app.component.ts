@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -23,7 +23,7 @@ export class MyApp {
 
   mostrarAnimacionInicio : boolean = true;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public events: Events ,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // Tener cuidado que así como está si pongo alguno con hijos abajo de uno que si tiene,
@@ -35,7 +35,7 @@ export class MyApp {
       { title: 'Consultorios', component: ConsultoriosPage, hasChildren: true }
       
     ];
-
+    this.listenToLoginEvents();
   }
 
   initializeApp() {
@@ -60,4 +60,18 @@ export class MyApp {
     this.subMenuVisible = !this.subMenuVisible;
   }
 
+  listenToLoginEvents() {
+    this.events.subscribe('user:Secretaria', () => {
+      console.log("El usuario con rol Secretaria a Iniciado sesion y se detecto en la Raiz");
+    });
+    this.events.subscribe('user:Profesional', () => {
+      console.log("El usuario con rol Profesional a Iniciado sesion y se detecto en la Raiz");
+    });
+    this.events.subscribe('user:Paciente', () => {
+      console.log("El usuario con rol Paciente a Iniciado sesion y se detecto en la Raiz");
+    });
+    this.events.subscribe('user:null', () => {
+      console.log("Usuario sin Rol");
+    });
+  }
 }

@@ -5,36 +5,38 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+    <ion-navbar color=navBar>
+        <ion-title text-center>Bienvenido a Helmut</ion-title>
+      </ion-navbar>
 
-  <ion-navbar color="primary">
-    <ion-title>Login</ion-title>
-  </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="login-content" padding>
+<ion-content class="login-content"  padding>
+  
   <ion-row class="logo-row">
-    <ion-col></ion-col>
-    <ion-col width-67>
-      <img src="http://placehold.it/300x200" />
-    </ion-col>
-    <ion-col></ion-col>
+      <ion-slides pager>
+        <ion-slide *ngFor="let image of [1,2,3]" >
+            <img data-src="../../assets/imgs/img_login_{{image}}.jpg" >
+        </ion-slide>
+      </ion-slides>
   </ion-row>
 
   <div class="login-box">
     <form (ngSubmit)="login(user)" #registerForm="ngForm">
+      <ion-title text-center><p>Iniciar Sesion </p></ion-title>
       <ion-row>
         <ion-col>
           <ion-list inset>
 
-            <ion-item>
-              <ion-icon name="mail" item-start></ion-icon> 
+            <ion-item style="background:transparent">
+              <ion-icon name="mail" color=light item-start></ion-icon>
               <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-icon name="lock" item-start></ion-icon>
+            <ion-item style="background:transparent">
+              <ion-icon name="lock" color=light item-start></ion-icon>
               <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required></ion-input>
             </ion-item>
 
@@ -44,15 +46,15 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" color="primary" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <!-- <ion-row>
         <ion-col class="signup-col">
           <button ion-button full (click)="irARegistro()" color="secondary">Registrarse</button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
     </form>
   </div>
 </ion-content>

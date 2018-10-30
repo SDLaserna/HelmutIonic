@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -33,7 +34,14 @@ export class HomePage {
   }
 
   logout(){
-    this.authService.logout(this.firebaseUser);
+    console.log("Ingreso el logOut");
+    this.authFirebase.auth.signOut().then(function(){
+      //sing Out succesful
+      console.log("Se cerro session correctamente. Usuario actual en => ",  this.authFirebase.auth.currentUser);
+    }).catch(function(error){
+      // An error happend
+    });
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
