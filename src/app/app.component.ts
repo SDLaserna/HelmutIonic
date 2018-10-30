@@ -8,6 +8,7 @@ import { LoginPage } from './../pages/login/login';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { timer } from "rxjs/observable/timer";
+import { CalendarioPage } from '../pages/calendario/calendario';
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,10 +26,12 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // Tener cuidado que así como está si pongo alguno con hijos abajo de uno que si tiene,
+    // no se visualiza
     this.pages = [
       { title: 'Inicio', component: HomePage, hasChildren : false },
       { title: 'Lista de ejemplo', component: ListPage, hasChildren : false },
+      { title: 'Calendario', component : CalendarioPage, hasChildren: false },
       { title: 'Consultorios', component: ConsultoriosPage, hasChildren: true }
       
     ];

@@ -20,6 +20,9 @@ import { ConsultoriosPage } from '../pages/consultorios/consultorios';
 import { RegisterPage } from '../pages/register/register';
 import { InterceptorModule } from '../interceptors/interceptor.module';
 import { ComponentsModule } from '../components/components.module';
+import { CalendarioPageModule } from '../pages/calendario/calendario.module';
+import { SeleccionDeTurnoPageModule } from '../pages/seleccion-de-turno/seleccion-de-turno.module';
+import { SeleccionDeTurnoPage } from '../pages/seleccion-de-turno/seleccion-de-turno';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ComponentsModule } from '../components/components.module';
     AngularFireModule.initializeApp(FIREBASE_CONFIG), /*--> Para configurar con nuestro proyecto de firebase */
     AngularFireAuthModule,
     InterceptorModule,
-    ComponentsModule
+    ComponentsModule,
+    CalendarioPageModule,
+    SeleccionDeTurnoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +52,8 @@ import { ComponentsModule } from '../components/components.module';
     ListPage,
     LoginPage,
     ConsultoriosPage,
-    RegisterPage
+    RegisterPage,
+    SeleccionDeTurnoPage
   ],
   providers: [
     StatusBar,

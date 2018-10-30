@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calendario
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-calendar #calendar lang="es" (onDaySelect)="onDaySelect($event)"></ion-calendar>  
+  <button ion-button (click)="calendar.today()">Ir al dia de hoy</button>
+</ion-content>

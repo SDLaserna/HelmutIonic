@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Seleccionar horario disponible</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-list>
+    <button ion-item *ngFor="let linea of cantidadDeLineas; let i = index;" (click)="seleccionDeTurno(linea, $event)">
+      <!-- <ion-icon name="medkit" item-start></ion-icon> -->
+      Horario {{linea + i }}
+    </button>
+  </ion-list>
+
+
+</ion-content>
