@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { ListaDeMedicosPage } from '../../pages/lista-de-medicos/lista-de-medicos';
+import { CalendarioPage } from '../../pages/calendario/calendario';
+
 
 @Component({
   selector: 'card-medico',
@@ -6,33 +10,41 @@ import { Component } from '@angular/core';
 })
 export class CardMedicoComponent {
 
-  busqPorEspecialidad : boolean;
+  busqPorEspecialidad: boolean;
   busqPorProfesional: boolean;
   especialidad: string;
   nomOmatricula: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log('Hello CardMedicoComponent Component');
     this.busqPorEspecialidad = true;
   }
 
-  seBuscaPorEspecialidad(){
+  seBuscaPorEspecialidad() {
     this.busqPorProfesional = false;
     this.busqPorEspecialidad = true;
   }
 
-  seBuscaPorProfesional(){
-      this.busqPorProfesional = true;
-      this.busqPorEspecialidad = false;
+  seBuscaPorProfesional() {
+    this.busqPorProfesional = true;
+    this.busqPorEspecialidad = false;
   }
 
-  visualizarListaDeMedicos(){
-    if (this.busqPorEspecialidad == true
-      && this.busqPorProfesional == false
-      && this.especialidad != null) {
-      // no se como hacerle un push con el parámetro a una componente que no tiene Navctrl
-      // voy a probar hacer una componente con la lista y mandarle un input desde la vista.
-      // Ver como hizo la lista Gutavo para poder ver si le hago un input.
-    }
+  visualizarListaDeMedicos() {
+    // console.log(this.especialidad);
+    // if (this.busqPorEspecialidad == true
+      // && this.busqPorProfesional == false
+      // && this.especialidad != null) {
+      this.navCtrl.push(ListaDeMedicosPage, { especializacionABuscar: this.especialidad });
+    // }
+  }
+
+  visualizarDisponibilidad(){
+    // console.log(this.nomOmatricula);
+    // if (this.busqPorProfesional == true 
+      // && this.busqPorEspecialidad == false 
+      // && this.nomOmatricula != null) {
+      this.navCtrl.push(CalendarioPage, {nomOmatriculaABuscar : this.nomOmatricula});
+    // }
   }
 }

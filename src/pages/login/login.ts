@@ -109,6 +109,6 @@ export class LoginPage {
     this.slides.pager =true;
     this.slides.loop = true;
     this.slides.autoplayDisableOnInteraction=false;
-    this.slides.autoplay = 1300;
+    this.slides.autoplay = 6000;
   }
 }

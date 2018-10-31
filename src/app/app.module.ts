@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,12 +22,16 @@ import { ComponentsModule } from '../components/components.module';
 import { CalendarioPageModule } from '../pages/calendario/calendario.module';
 import { SeleccionDeTurnoPageModule } from '../pages/seleccion-de-turno/seleccion-de-turno.module';
 import { SeleccionDeTurnoPage } from '../pages/seleccion-de-turno/seleccion-de-turno';
+import { GestionDeTurnosPage } from '../pages/gestion-de-turnos/gestion-de-turnos';
+import { GestionDeTurnosPageModule } from '../pages/gestion-de-turnos/gestion-de-turnos.module';
+import { ListaDeMedicosPageModule } from '../pages/lista-de-medicos/lista-de-medicos.module';
+import { ListaDeMedicosPage } from '../pages/lista-de-medicos/lista-de-medicos';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     ConsultoriosPage,
     RegisterPage
@@ -43,17 +46,21 @@ import { SeleccionDeTurnoPage } from '../pages/seleccion-de-turno/seleccion-de-t
     InterceptorModule,
     ComponentsModule,
     CalendarioPageModule,
-    SeleccionDeTurnoPageModule
+    SeleccionDeTurnoPageModule,
+    GestionDeTurnosPageModule,
+    ListaDeMedicosPageModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     ConsultoriosPage,
     RegisterPage,
-    SeleccionDeTurnoPage
+    SeleccionDeTurnoPage,
+    GestionDeTurnosPage,
+    ListaDeMedicosPage
   ],
   providers: [
     StatusBar,

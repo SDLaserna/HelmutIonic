@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ItemSliding } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { CalendarioPage } from '../../pages/calendario/calendario';
 
 /**
  * Generated class for the MedicoListaComponent component.
@@ -30,11 +31,12 @@ export class MedicoListaComponent {
   { nombre: 'Dr. Cureta', matricula: '456789525' },
   { nombre: 'Dr. Cureta', matricula: '456789525' } ];
 
-  constructor() {
+  constructor(public navCtrl : NavController) {
     console.log('Hello MedicoListaComponent Component');
   }
 
-  visualizar(medico:any){
-    console.log("Debe visualizar los horarios de disponibilidad del médico"+medico.nombre);
+  visualizar(nomOmatriculaABuscar:any){
+    // console.log("Debe visualizar los horarios de disponibilidad del médico"+medico.nombre);
+    this.navCtrl.push(CalendarioPage, {nomOmatriculaABuscar : this.nomOmatricula});
   }
 }

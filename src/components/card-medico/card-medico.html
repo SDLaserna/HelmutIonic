@@ -11,9 +11,9 @@
       </ion-item>
 
       <ion-buttons start>
-        <button *ngIf="busqPorEspecialidad == false" ion-button outline (click)="seBuscaPorEspecialidad()">Buscar por
-          especialidad</button>
-        <button *ngIf="busqPorEspecialidad == true" ion-button outline (click)="seBuscaPorProfesional()">Buscar por
+        <button *ngIf="busqPorEspecialidad == false" ion-button outline (click)="seBuscaPorEspecialidad()">
+          Cambiar a búsqueda por especialidad</button>
+        <button *ngIf="busqPorEspecialidad == true" ion-button outline (click)="seBuscaPorProfesional()">Cambiar a busqueda por
           profesional</button>
       </ion-buttons>
 
@@ -30,7 +30,8 @@
       </ion-item>
 
       <ion-buttons start>
-          <button ion-button round (click)="visualizarListaDeMedicos()">Ver disponibilidad</button>
+          <button *ngIf="busqPorEspecialidad ==true" ion-button round (click)="visualizarListaDeMedicos(especialidad)">Ver profesionales</button>
+          <button *ngIf="busqPorEspecialidad==false" ion-button round (click)="visualizarDisponibilidad(nomOmatricula)">Ver disponibilidad del profesional</button>
       </ion-buttons>
 
     </ion-list>

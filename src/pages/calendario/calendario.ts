@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SeleccionDeTurnoPage } from '../seleccion-de-turno/seleccion-de-turno';
 
 
@@ -22,9 +22,14 @@ export class CalendarioPage {
   selectedEvent: any;
   isSelected: any;
 
-  constructor(public navCtrl: NavController) {}
+  profesionalVisualizado : string;
+
+  constructor(public navCtrl: NavController, public navParam : NavParams) {
+   this.profesionalVisualizado = navParam.get("nomOmatriculaAbuscar");
+  }
 
   ionViewWillEnter() {
+    console.log("El parametro recibido fue:" + this.profesionalVisualizado);
   }
 
   onDaySelect(evento){
