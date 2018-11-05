@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { timer } from "rxjs/observable/timer";
 import { CalendarioPage } from '../pages/calendario/calendario';
 import { GestionDeTurnosPage } from '../pages/gestion-de-turnos/gestion-de-turnos';
+import { BuscarHistoriaClinicaPage } from '../pages/buscar-historia-clinica/buscar-historia-clinica';
 @Component({
   templateUrl: 'app.html'
 })
@@ -31,6 +32,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage, hasChildren : false },
       { title: 'Gestión de turnos', component: GestionDeTurnosPage, hasChildren:false},
+      { title: 'Historia Clínica', component:BuscarHistoriaClinicaPage , hasChildren: false},
       { title: 'Calendario', component : CalendarioPage, hasChildren: false },
       { title: 'Consultorios', component: ConsultoriosPage, hasChildren: true }
       

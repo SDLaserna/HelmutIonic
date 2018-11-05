@@ -10,10 +10,10 @@ import { ConsultoriosServiceProvider } from '../../providers/consultorios-servic
 export class ConsultoriosPage {
 
   listaDeConsultorios: Consultorio[] = [];
-  listaDeSensores : Sensor[] = [];
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public consultoriosService: ConsultoriosServiceProvider) {
-    // this.obtenerSensores();
+    
     this.obtenerConsultorios();
   }
 

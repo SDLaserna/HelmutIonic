@@ -5,27 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color=navBar>
-        <ion-title text-center>Bienvenido a Helmut</ion-title>
-      </ion-navbar>
-
-
+  <ion-navbar color=navBar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Bienvenido a Helmut</ion-title>
+  </ion-navbar>
 </ion-header>
 
 
-<ion-content class="login-content"  padding>
-  
+<ion-content class="login-content" padding>
+
   <ion-row class="logo-row">
-      <ion-slides pager>
-        <ion-slide *ngFor="let image of [1,2,3]" >
-            <img data-src="../../assets/imgs/img_login_{{image}}.jpg" >
-        </ion-slide>
-      </ion-slides>
+    <ion-slides pager>
+      <ion-slide *ngFor="let image of [1,2,3]">
+        <img data-src="../../assets/imgs/img_login_{{image}}.jpg">
+      </ion-slide>
+    </ion-slides>
   </ion-row>
 
   <div class="login-box">
     <form (ngSubmit)="login(user)" #registerForm="ngForm">
-      <ion-title text-center><p>Iniciar Sesion </p></ion-title>
+      <ion-title text-center>
+        <p>Iniciar Sesion </p>
+      </ion-title>
       <ion-row>
         <ion-col>
           <ion-list inset>
