@@ -37,6 +37,6 @@ export class MedicoListaComponent {
 
   visualizar(nomOmatriculaABuscar:any){
     // console.log("Debe visualizar los horarios de disponibilidad del médico"+medico.nombre);
-    this.navCtrl.push(CalendarioPage, {nomOmatriculaABuscar : this.nomOmatricula});
+    this.navCtrl.push(CalendarioPage, {nomOmatriculaABuscar : nomOmatriculaABuscar});
   }
 }
