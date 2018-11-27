@@ -1,5 +1,5 @@
 <ion-card>
-  <ion-card-content>
+  <ion-card-content no-padding>
     <ion-list>
       
       <ion-list-header color="secondary" style="font-weight:bold; font-size: 16px;">Profesional de la salud</ion-list-header>
@@ -30,8 +30,8 @@
       </ion-item>
 
       <ion-buttons start>
-          <button *ngIf="busqPorEspecialidad ==true" ion-button round (click)="visualizarListaDeMedicos(especialidad)">Ver profesionales</button>
-          <button *ngIf="busqPorEspecialidad==false" ion-button round (click)="visualizarDisponibilidad(nomOmatricula)">Ver disponibilidad del profesional</button>
+          <button *ngIf="busqPorEspecialidad ==true" ion-button  full (click)="visualizarListaDeMedicos(especialidad)">Ver profesionales</button>
+          <button *ngIf="busqPorEspecialidad==false" ion-button  full (click)="visualizarDisponibilidad(nomOmatricula)">Ver disponibilidad del profesional</button>
       </ion-buttons>
 
     </ion-list>

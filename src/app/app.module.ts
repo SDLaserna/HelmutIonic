@@ -36,6 +36,10 @@ import { BuscarHistoriaClinicaPage } from '../pages/buscar-historia-clinica/busc
 import { BuscarHistoriaClinicaPageModule } from '../pages/buscar-historia-clinica/buscar-historia-clinica.module';
 import { ModificarDatosPacientePage } from '../pages/modificar-datos-paciente/modificar-datos-paciente';
 import { ModificarDatosPacientePageModule } from '../pages/modificar-datos-paciente/modificar-datos-paciente.module';
+import { PopupDatosDelPacientePageModule } from '../pages/popup-datos-del-paciente/popup-datos-del-paciente.module';
+
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +68,8 @@ import { ModificarDatosPacientePageModule } from '../pages/modificar-datos-pacie
     FormsModule,
     HistoriaClinicaPageModule,
     BuscarHistoriaClinicaPageModule,
-    ModificarDatosPacientePageModule
+    ModificarDatosPacientePageModule,
+    PopupDatosDelPacientePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

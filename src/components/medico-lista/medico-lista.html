@@ -1,7 +1,9 @@
 <ion-card>
-  <ion-card-content>
+  <ion-card-content no-padding>
     <ion-list>
       <ion-list-header color="secondary" style="font-weight:bold; font-size: 16px;">Profesionales</ion-list-header>
+      
+      <ion-searchbar></ion-searchbar>
       
       <ion-item-sliding *ngFor='let medico of medicos' #slidingItem>
         <ion-item>

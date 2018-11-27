@@ -16,7 +16,8 @@ import { MedicoListaComponent } from './medico-lista/medico-lista';
         ModificarDatosPacienteComponent,
         CardPacienteComponent,
         CardMedicoComponent,
-        MedicoListaComponent],
+        MedicoListaComponent,
+        ModificarDatosPacienteComponent],
     imports: [IonicModule.forRoot({
         HistoriaClinicaPacienteComponent,
         CardBuscadorComponent,

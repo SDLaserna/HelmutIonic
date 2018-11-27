@@ -1,59 +1,48 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { Slides } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
+import { PopoverController } from 'ionic-angular';
+import { PopupDatosDelPacientePage } from '../../pages/popup-datos-del-paciente/popup-datos-del-paciente';
 
 @Component({
   selector: 'modificar-datos-paciente',
   templateUrl: 'modificar-datos-paciente.html'
 })
-export class ModificarDatosPacienteComponent implements AfterViewInit{
 
-  
-  @ViewChild('slidesID') slides : Slides;
+export class ModificarDatosPacienteComponent {
 
-  // @ViewChild('slidesAntNoPatologicos') slidesNoPatologico : Slides;
   calidad: string;
   cantidadAlimentacion: string;
-  cantidadAlcohol:string;
-  frecuenciaAlcohol:string;
+  cantidadAlcohol: string;
+  frecuenciaAlcohol: string;
   antecedenteAlcohol: string;
-  cantidadTabaco:string;
-  frecuenciaTabaco:string;
-  frecuenciaDeportes:string;
-  parentezco:string;
-  frecuenciaDeAlimentacion:string;
+  cantidadTabaco: string;
+  frecuenciaTabaco: string;
+  frecuenciaDeportes: string;
+  parentezco: string;
+  frecuenciaDeAlimentacion: string;
+
+  // indiceDesdePopover: number = 0;
+  @Input() indiceDesdePopover : number = 0;
+
   
-  constructor() {
+  constructor(public popoverCtrl: PopoverController) {
     console.log('Hello ModificarDatosPacienteComponent Component');
   }
 
-  ngAfterViewInit(){
-  //   Para poder referenciar el viewChild apenas empieza,
-  //  tengo que implementar este método de esta interface, sino en el constructor es undefined
-    this.slides.lockSwipes(true);
-    // this.slidesNoPatologico.paginationType = 'progress';
-  }
 
-  irADatosPersonales(){
-    this.slides.lockSwipes(false);
-    this.slides.slideTo(0);
-    this.slides.lockSwipes(true);
-  }
 
-  irAAntPatologicos(){
-    this.slides.lockSwipes(false);
-    this.slides.slideTo(1);
-    this.slides.lockSwipes(true);
-  }
+  // presentPopover(myEvent) {
+  //   let popover = this.popoverCtrl.create(PopupDatosDelPacientePage);
+  //   popover.present({
+  //     ev: myEvent
+  //   });
+  //   popover.onDidDismiss(
+  //     dato => {
+  //       console.log(dato);
+  //       this.indiceDesdePopover = dato;
+  //       console.log(this.indiceDesdePopover);
+        
+  //     });
+  // }
 
-  irAAntNOPatologicos(){
-    this.slides.lockSwipes(false);
-    this.slides.slideTo(2);
-    this.slides.lockSwipes(true);
-  }
 
-  irAAntFamiliares(){
-    this.slides.lockSwipes(false);
-    this.slides.slideTo(3);
-    this.slides.lockSwipes(true);
-  }
 }

@@ -1,542 +1,500 @@
-<ion-card>
+<ion-card no-padding>
 
-  <ion-fab top left>
-    <button ion-fab color="secondary">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-fab-list side="bottom">
+  <ion-card-content no-padding>
+      
+    <!-- <ion-icon name="more" (click)="presentPopover($event)"></ion-icon> -->
+
+    <ion-list *ngIf="indiceDesdePopover == 0">
+      <!-- Componente de datos personales-->
+      <ion-list>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Datos personales</ion-list-header>
+
+        <ion-avatar>
+          <img src="../../assets/imgs/profile_image.png" style="max-width: 25%;" />
+        </ion-avatar>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Apellido</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Nombres</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>N° de documento (Sin puntos)</ion-label>
+          <ion-input type="number" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Fecha de nacimiento</ion-label>
+          <ion-input type="text" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Obra social</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Teléfono fijo</ion-label>
+          <ion-input type="tel" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Teléfono celular</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Domicilio</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Localidad</ion-label>
+          <ion-input type="search" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>E-mail</ion-label>
+          <ion-input type="email" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-list radio-group>
+          <ion-list-header>Sexo</ion-list-header>
+          <ion-item>
+            <ion-label>Hombre</ion-label>
+            <ion-radio value="Hombre"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mujer</ion-label>
+            <ion-radio value="Mujer"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+
       <ion-buttons>
-        <button small ion-button color="secondary" style="width: 100%; max-width: 100%;" (click)="irADatosPersonales()">Datos
-          personales</button>
-        <button small ion-button color="secondary" style="width: 100%; max-width: 100%;" (click)="irAAntPatologicos()">Antecedentes
-          patológicos</button>
-        <button small ion-button color="secondary" style="width: 100%; max-width: 100%;" (click)="irAAntNOPatologicos()">Antecedentes
-          no patológicos</button>
-        <button small ion-button color="secondary" style="width: 100%; max-width: 100%;" (click)="irAAntFamiliares()">Antecedentes
-          familiares</button>
+        <button ion-button rounded end>
+          Confirmar
+        </button>
       </ion-buttons>
-    </ion-fab-list>
-  </ion-fab>
+      <button ion-button round> Siguiente </button>
+    </ion-list>
 
-  <ion-card-content>
-    <ion-slides #slidesID style="height: 100%;">
+    <!-- Componente Antecedentes patológicos-->
+    <ion-list *ngIf="indiceDesdePopover == 1">
+      <ion-list>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes patológicos</ion-list-header>
+        <ion-item>
+          <ion-label color="primary" stacked>Enfermedades de infancia</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
 
-      <!----------------------------------------------------SLIDE 1---------------------------------------------->
-      <ion-slide>
-        <ion-list>
-          <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Datos personales</ion-list-header>
+        <ion-item>
+          <ion-label color="primary" stacked>Enfermedades no quirúrjicas</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
 
-          <ion-avatar>
-            <img src="../../assets/imgs/profile_image.png" style="max-width: 25%;" />
-          </ion-avatar>
+        <ion-item>
+          <ion-label color="primary" stacked>Enfermedades quirúrjicas</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label color="primary" stacked>Accidentes</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Traumatismos</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Fracturas</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Transfuciones</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Alergias</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Incapacidades</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+
+    <!-- Componente antecedentes no patológicos -->
+    <div *ngIf="indiceDesdePopover == 2">
+      <ion-list>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;" padding>Antecedentes no patológicos</ion-list-header>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos generales</ion-list-header>
+        <ion-item>
+          <ion-label color="primary" stacked>Procedencia</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Residencia</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Ocupación actual</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Ocupación anterior</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Escolaridad</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+        <ion-list radio-group>
+          <ion-list-header>Lee</ion-list-header>
           <ion-item>
-            <ion-label color="primary" stacked>Apellido</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiLee"></ion-radio>
           </ion-item>
-
           <ion-item>
-            <ion-label color="primary" stacked>Nombres</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoLee"></ion-radio>
           </ion-item>
-
+        </ion-list>
+        <ion-list radio-group>
+          <ion-list-header>Escribe</ion-list-header>
           <ion-item>
-            <ion-label color="primary" stacked>N° de documento (Sin puntos)</ion-label>
-            <ion-input type="number" placeholder="Sin definir"  ></ion-input>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiEscribe"></ion-radio>
           </ion-item>
-
           <ion-item>
-            <ion-label color="primary" stacked>Fecha de nacimiento</ion-label>
-            <ion-input type="text" placeholder="Sin definir"  ></ion-input>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoEscribe"></ion-radio>
           </ion-item>
+        </ion-list>
+      </ion-list>
 
-          <ion-item>
-            <ion-label color="primary" stacked>Obra social</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Teléfono fijo</ion-label>
-            <ion-input type="tel" placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Teléfono celular</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Domicilio</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Localidad</ion-label>
-            <ion-input type="search" placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>E-mail</ion-label>
-            <ion-input type="email" placeholder="Sin definir"  ></ion-input>
-          </ion-item>
+      <!-- Ant- no patológicos parte 2 -->
+      <ion-list>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos habitacionales</ion-list-header>
 
           <ion-list radio-group>
-            <ion-list-header>Sexo</ion-list-header>
-            <ion-item>
-              <ion-label>Hombre</ion-label>
-              <ion-radio value="Hombre"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Mujer</ion-label>
-              <ion-radio value="Mujer"></ion-radio>
-            </ion-item>
-          </ion-list>
-        </ion-list>
-        <ion-buttons>
-          <button ion-button rounded end>
-            Confirmar
-          </button>
-        </ion-buttons>
-      </ion-slide>
-      <!----------------------------------------------------SLIDE 2---------------------------------------------->
-      <ion-slide>
-        <ion-list>
-          <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes patológicos</ion-list-header>
+          <ion-list-header>¿Dispone de servicio de luz?</ion-list-header>
           <ion-item>
-            <ion-label color="primary" stacked>Enfermedades de infancia</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiDisponeDeLuz"></ion-radio>
           </ion-item>
-
           <ion-item>
-            <ion-label color="primary" stacked>Enfermedades no quirúrjicas</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Enfermedades quirúrjicas</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Accidentes</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Traumatismos</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Fracturas</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Transfuciones</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Alergias</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Incapacidades</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoDisponeDeLuz"></ion-radio>
           </ion-item>
         </ion-list>
-      </ion-slide>
 
-      <!----------------------------------------------------SLIDE 3---------------------------------------------->
-
-      <ion-slide>
-        <!-- Esto es para hacer una especie de paginación dentro del slide de Antecedentes no patológicos -->
-        <ion-slides #slidesAntNoPatologicos pager>
-          <!--------------------------- Subslide 1 ----------------- -->
-          <ion-slide>
-            <ion-list>
-              <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes no patológicos</ion-list-header>
-              <h3>Datos generales</h3>
-              <ion-item>
-                <ion-label color="primary" stacked>Procedencia</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label color="primary" stacked>Residencia</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label color="primary" stacked>Ocupación actual</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label color="primary" stacked>Ocupación anterior</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label color="primary" stacked>Escolaridad</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-              <ion-list radio-group>
-                <ion-list-header>Lee</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiLee"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoLee"></ion-radio>
-                </ion-item>
-              </ion-list>
-              <ion-list radio-group>
-                <ion-list-header>Escribe</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiEscribe"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoEscribe"></ion-radio>
-                </ion-item>
-              </ion-list>
-            </ion-list>
-          </ion-slide>
-
-          <!--------------------------- Subslide 2 ----------------- -->
-          <ion-slide>
-            <ion-list>
-              <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes no patológicos</ion-list-header>
-
-              <h3>Datos habitacionales</h3>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Dispone de servicio de luz?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiDisponeDeLuz"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoDisponeDeLuz"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Dispone de agua corriente?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiDisponeDeAgua"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoDisponeDeAgua"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Dispone de servicios de cloacas?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiDisponeDeCloacas"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoDisponeDeCloacas"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Cantidad de convivientes</ion-label>
-                <ion-input type="number" placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Cantidad de habitaciones</ion-label>
-                <ion-input type="number" placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Calidad</ion-label>
-                <ion-select [(ngModel)]="calidad">
-                  <ion-option value="mala">Mala</ion-option>
-                  <ion-option value="buena">Buena</ion-option>
-                  <ion-option value="muyBuena">Muy buena</ion-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
-          </ion-slide>
-
-          <!--------------------------- Subslide 3 ----------------- -->
-          <ion-slide>
-            <ion-list>
-              <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes no patológicos</ion-list-header>
-
-              <h3>Datos de alimentación</h3>
-
-              <ion-item>
-                <ion-label>Cantidad de alimentación</ion-label>
-                <ion-select [(ngModel)]="cantidadAlimentacion">
-                  <ion-option value="poca">Poca</ion-option>
-                  <ion-option value="suficiente">Suficiente</ion-option>
-                  <ion-option value="abundante">Abundante</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Frecuencia de alimentación</ion-label>
-                <ion-select [(ngModel)]="frecuenciaDeAlimentacion">
-                  <ion-option value="1vezxdia">1 vez por día</ion-option>
-                  <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
-                  <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Predominio alimentación</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Intolerancia</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-            </ion-list>
-          </ion-slide>
-
-          <!--------------------------- Subslide 3 ----------------- -->
-          <ion-slide>
-            <ion-list>
-              <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes no patológicos</ion-list-header>
-
-              <h3>Datos de adicciones</h3>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Consume alcohol?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiConsumeAlcohol"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoConsumeAlcohol"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-item>
-                <ion-label>Cantidad de Alcohol que consume</ion-label>
-                <ion-select [(ngModel)]="cantidadAlcohol">
-                  <ion-option value="poca">Poco</ion-option>
-                  <ion-option value="suficiente">Suficiente</ion-option>
-                  <ion-option value="abundante">Abundante</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>HC. antecedentes de alcohol</ion-label>
-                <ion-select [(ngModel)]="antecedenteAlcohol">
-                  <ion-option value="1vezxdia">1 vez por día</ion-option>
-                  <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
-                  <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Frecuencia de consumo de alcohol</ion-label>
-                <ion-select [(ngModel)]="frecuenciaAlcohol">
-                  <ion-option value="1vezxdia">1 vez por día</ion-option>
-                  <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
-                  <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Consume tabaco?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiConsumeTabaco"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoConsumeTabaco"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-item>
-                <ion-label>Cantidad de Tabaco que consume</ion-label>
-                <ion-select [(ngModel)]="cantidadTabaco">
-                  <ion-option value="poca">Poco</ion-option>
-                  <ion-option value="suficiente">Suficiente</ion-option>
-                  <ion-option value="abundante">Abundante</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Frecuencia de consumo de tabaco</ion-label>
-                <ion-select [(ngModel)]="frecuenciaTabaco">
-                  <ion-option value="1vezxdia">1 vez por día</ion-option>
-                  <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
-                  <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Edad de comienzo de consumo de tabaco</ion-label>
-                <ion-input type="number" placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Consumo de drogas?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiConsumeDrogas"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoConsumeDrogas"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-              <ion-list radio-group>
-                <ion-list-header>¿Consume cocaína?</ion-list-header>
-                <ion-item>
-                  <ion-label>Si</ion-label>
-                  <ion-radio value="SiConsumeCocaina"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>No</ion-label>
-                  <ion-radio value="NoConsumeCocaina"></ion-radio>
-                </ion-item>
-              </ion-list>
-            </ion-list>
-          </ion-slide>
-
-          <!--------------------------- Subslide 4 ----------------- -->
-          <ion-slide>
-            <ion-list>
-              <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes no patológicos</ion-list-header>
-
-              <h3>Otros datos</h3>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Sueño</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Horas</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Deportes</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Frecuencia en que hace deportes</ion-label>
-                <ion-select [(ngModel)]="frecuenciaDeportes">
-                  <ion-option value="1vezxdia">1 vez por día</ion-option>
-                  <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
-                  <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Emuntorios</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Catarsis</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Diuresis</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Religión</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary" stacked>Vacunas</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-              </ion-item>
-
-            </ion-list>
-          </ion-slide>
-
-        </ion-slides>
-      </ion-slide>
-
-      <!----------------------------------------------------SLIDE 4---------------------------------------------->
-      <ion-slide>
-        <ion-list>
-          <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes familiares</ion-list-header>
-
+        <ion-list radio-group>
+          <ion-list-header>¿Dispone de agua corriente?</ion-list-header>
           <ion-item>
-            <ion-label>Parentezco</ion-label>
-            <ion-select [(ngModel)]="parentezco">
-              <ion-option value="abuelop">Abuelo paterno</ion-option>
-              <ion-option value="abuelom">Abuelo materno</ion-option>
-              <ion-option value="abuelap">Abuela paterna</ion-option>
-              <ion-option value="abuelam">Abuela materna</ion-option>
-              <ion-option value="padre">Padre</ion-option>
-              <ion-option value="madre">Madre</ion-option>
-              <ion-option value="hermanoa">Hermano/a</ion-option>
-            </ion-select>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiDisponeDeAgua"></ion-radio>
           </ion-item>
-
           <ion-item>
-            <ion-label color="primary" stacked>Apellido</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoDisponeDeAgua"></ion-radio>
           </ion-item>
-
-          <ion-item>
-            <ion-label color="primary" stacked>Nombre</ion-label>
-            <ion-input placeholder="Sin definir"  ></ion-input>
-          </ion-item>
-
-          <ion-list radio-group>
-              <ion-list-header>¿Vive?</ion-list-header>
-              <ion-item>
-                <ion-label>Si</ion-label>
-                <ion-radio value="SiVive"></ion-radio>
-              </ion-item>
-              <ion-item>
-                <ion-label>No</ion-label>
-                <ion-radio value="NoVive"></ion-radio>
-              </ion-item>
-            </ion-list>
-
-            <ion-item>
-                <ion-label color="primary" stacked>Razón de fallecimiento</ion-label>
-                <ion-input placeholder="Sin definir"  ></ion-input>
-            </ion-item>            
-
-            <ion-item>
-                <ion-label color="primary" stacked>Edad</ion-label>
-                <ion-input type="number" placeholder="Sin definir"  ></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label color="primary" stacked>Diagnóstico</ion-label>
-                <ion-input type="search"  placeholder="Escriba para iniciar la búsqueda"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label color="primary" stacked>Descripción</ion-label>
-                <ion-textarea  placeholder="Sin definir"  ></ion-textarea>
-            </ion-item>
-
         </ion-list>
-      </ion-slide>
 
-    </ion-slides>
+        <ion-list radio-group>
+          <ion-list-header>¿Dispone de servicios de cloacas?</ion-list-header>
+          <ion-item>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiDisponeDeCloacas"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoDisponeDeCloacas"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Cantidad de convivientes</ion-label>
+          <ion-input type="number" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Cantidad de habitaciones</ion-label>
+          <ion-input type="number" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Calidad</ion-label>
+          <ion-select [(ngModel)]="calidad">
+            <ion-option value="mala">Mala</ion-option>
+            <ion-option value="buena">Buena</ion-option>
+            <ion-option value="muyBuena">Muy buena</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <!-- Ant. no patológicos parte 3 -->
+      <ion-list>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos de alimentación</ion-list-header>
+
+        <ion-item>
+          <ion-label>Cantidad de alimentación</ion-label>
+          <ion-select [(ngModel)]="cantidadAlimentacion">
+            <ion-option value="poca">Poca</ion-option>
+            <ion-option value="suficiente">Suficiente</ion-option>
+            <ion-option value="abundante">Abundante</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Frecuencia de alimentación</ion-label>
+          <ion-select [(ngModel)]="frecuenciaDeAlimentacion">
+            <ion-option value="1vezxdia">1 vez por día</ion-option>
+            <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
+            <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Predominio alimentación</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Intolerancia</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Ant no patológicos parte 4 -->
+      <ion-list>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos de adicciones</ion-list-header>
+
+        <ion-list radio-group>
+          <ion-list-header>¿Consume alcohol?</ion-list-header>
+          <ion-item>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiConsumeAlcohol"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoConsumeAlcohol"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <ion-label>Cantidad de Alcohol que consume</ion-label>
+          <ion-select [(ngModel)]="cantidadAlcohol">
+            <ion-option value="poca">Poco</ion-option>
+            <ion-option value="suficiente">Suficiente</ion-option>
+            <ion-option value="abundante">Abundante</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>HC. antecedentes de alcohol</ion-label>
+          <ion-select [(ngModel)]="antecedenteAlcohol">
+            <ion-option value="1vezxdia">1 vez por día</ion-option>
+            <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
+            <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Frecuencia de consumo de alcohol</ion-label>
+          <ion-select [(ngModel)]="frecuenciaAlcohol">
+            <ion-option value="1vezxdia">1 vez por día</ion-option>
+            <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
+            <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-list radio-group>
+          <ion-list-header>¿Consume tabaco?</ion-list-header>
+          <ion-item>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiConsumeTabaco"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoConsumeTabaco"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <ion-label>Cantidad de Tabaco que consume</ion-label>
+          <ion-select [(ngModel)]="cantidadTabaco">
+            <ion-option value="poca">Poco</ion-option>
+            <ion-option value="suficiente">Suficiente</ion-option>
+            <ion-option value="abundante">Abundante</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Frecuencia de consumo de tabaco</ion-label>
+          <ion-select [(ngModel)]="frecuenciaTabaco">
+            <ion-option value="1vezxdia">1 vez por día</ion-option>
+            <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
+            <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Edad de comienzo de consumo de tabaco</ion-label>
+          <ion-input type="number" placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-list radio-group>
+          <ion-list-header>¿Consumo de drogas?</ion-list-header>
+          <ion-item>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiConsumeDrogas"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoConsumeDrogas"></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-list radio-group>
+          <ion-list-header>¿Consume cocaína?</ion-list-header>
+          <ion-item>
+            <ion-label>Si</ion-label>
+            <ion-radio value="SiConsumeCocaina"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio value="NoConsumeCocaina"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+
+      <!-- Ant. no patológicos parte 5 -->
+
+      <ion-list>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Otros datos</ion-list-header>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Sueño</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Horas</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Deportes</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Frecuencia en que hace deportes</ion-label>
+          <ion-select [(ngModel)]="frecuenciaDeportes">
+            <ion-option value="1vezxdia">1 vez por día</ion-option>
+            <ion-option value="2a4vecesxdia">Entre 2 y 4 veces al día</ion-option>
+            <ion-option value="4omasvecesxdia">4 veces o más al día</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Emuntorios</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Catarsis</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Diuresis</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Religión</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Vacunas</ion-label>
+          <ion-input placeholder="Sin definir"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <!-- Antecedentes familiares -->
+
+    <ion-list *ngIf="indiceDesdePopover == 3">
+      <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes familiares</ion-list-header>
+
+      <ion-item>
+        <ion-label>Parentezco</ion-label>
+        <ion-select [(ngModel)]="parentezco">
+          <ion-option value="abuelop">Abuelo paterno</ion-option>
+          <ion-option value="abuelom">Abuelo materno</ion-option>
+          <ion-option value="abuelap">Abuela paterna</ion-option>
+          <ion-option value="abuelam">Abuela materna</ion-option>
+          <ion-option value="padre">Padre</ion-option>
+          <ion-option value="madre">Madre</ion-option>
+          <ion-option value="hermanoa">Hermano/a</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Apellido</ion-label>
+        <ion-input placeholder="Sin definir"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Nombre</ion-label>
+        <ion-input placeholder="Sin definir"></ion-input>
+      </ion-item>
+
+      <ion-list radio-group>
+        <ion-list-header>¿Vive?</ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio value="SiVive"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio value="NoVive"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Razón de fallecimiento</ion-label>
+        <ion-input placeholder="Sin definir"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Edad</ion-label>
+        <ion-input type="number" placeholder="Sin definir"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Diagnóstico</ion-label>
+        <ion-input type="search" placeholder="Escriba para iniciar la búsqueda"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Descripción</ion-label>
+        <ion-textarea placeholder="Sin definir"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <!-- </div> -->
   </ion-card-content>
 </ion-card>

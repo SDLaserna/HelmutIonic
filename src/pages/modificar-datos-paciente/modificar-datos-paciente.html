@@ -1,18 +1,13 @@
-<!--
-  Generated template for the ModificarDatosPacientePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Modificar datos del paciente</ion-title>
+  <ion-navbar color="primary">
+      <ion-icon name="more" (click)="presentPopover($event)" end></ion-icon>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <modificar-datos-paciente></modificar-datos-paciente>
+  <modificar-datos-paciente [indiceDesdePopover]="indiceDesdePopover"></modificar-datos-paciente>
 </ion-content>

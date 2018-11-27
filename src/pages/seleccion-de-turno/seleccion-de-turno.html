@@ -13,7 +13,8 @@
 <ion-content>
 
   <ion-list>
-    <button ion-item *ngFor="let linea of cantidadDeLineas; let i = index;" (click)="seleccionDeTurno(linea, $event)">
+    <!-- <button ion-item *ngFor="let linea of cantidadDeLineas; let i = index;" (click)="seleccionDeTurno(linea, $event)"> -->
+      <button ion-item *ngFor="let linea of cantidadDeLineas; let i = index;" (click)="abreConfirmacionDeTurno(linea)">
       <!-- <ion-icon name="medkit" item-start></ion-icon> -->
       Horario {{linea + i }}
     </button>
