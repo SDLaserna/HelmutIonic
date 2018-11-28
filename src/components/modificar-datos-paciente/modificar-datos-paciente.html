@@ -1,15 +1,16 @@
 <ion-card no-padding>
 
   <ion-card-content no-padding>
-      
+
     <!-- <ion-icon name="more" (click)="presentPopover($event)"></ion-icon> -->
 
     <ion-list *ngIf="indiceDesdePopover == 0">
       <!-- Componente de datos personales-->
       <ion-list>
-        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Datos personales</ion-list-header>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px; margin-top: 0% !important;">Datos
+          personales</ion-list-header>
 
-        <ion-avatar>
+        <ion-avatar padding>
           <img src="../../assets/imgs/profile_image.png" style="max-width: 25%;" />
         </ion-avatar>
 
@@ -77,17 +78,17 @@
       </ion-list>
 
       <ion-buttons>
-        <button ion-button rounded end>
+        <button ion-button rounded float-end>
           Confirmar
         </button>
       </ion-buttons>
-      <button ion-button round> Siguiente </button>
     </ion-list>
 
     <!-- Componente Antecedentes patológicos-->
     <ion-list *ngIf="indiceDesdePopover == 1">
       <ion-list>
-        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes patológicos</ion-list-header>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px; margin-top: 0% !important;">Antecedentes
+          patológicos</ion-list-header>
         <ion-item>
           <ion-label color="primary" stacked>Enfermedades de infancia</ion-label>
           <ion-input placeholder="Sin definir"></ion-input>
@@ -132,14 +133,23 @@
           <ion-label color="primary" stacked>Incapacidades</ion-label>
           <ion-input placeholder="Sin definir"></ion-input>
         </ion-item>
+
+        <ion-buttons>
+          <button ion-button rounded float-end>
+            Confirmar
+          </button>
+        </ion-buttons>
+
       </ion-list>
     </ion-list>
 
     <!-- Componente antecedentes no patológicos -->
     <div *ngIf="indiceDesdePopover == 2">
       <ion-list>
-        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;" padding>Antecedentes no patológicos</ion-list-header>
-        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos generales</ion-list-header>
+        <ion-list-header color="dark" style="font-weight:bold; font-size: 16px; margin-top: 0% !important;">Antecedentes
+          no patológicos</ion-list-header>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px; margin-top: 0% !important;">Datos
+          generales</ion-list-header>
         <ion-item>
           <ion-label color="primary" stacked>Procedencia</ion-label>
           <ion-input placeholder="Sin definir"></ion-input>
@@ -161,7 +171,7 @@
           <ion-input placeholder="Sin definir"></ion-input>
         </ion-item>
         <ion-list radio-group>
-          <ion-list-header>Lee</ion-list-header>
+          <ion-list-header>¿Lee?</ion-list-header>
           <ion-item>
             <ion-label>Si</ion-label>
             <ion-radio value="SiLee"></ion-radio>
@@ -172,7 +182,7 @@
           </ion-item>
         </ion-list>
         <ion-list radio-group>
-          <ion-list-header>Escribe</ion-list-header>
+          <ion-list-header>¿Escribe?</ion-list-header>
           <ion-item>
             <ion-label>Si</ion-label>
             <ion-radio value="SiEscribe"></ion-radio>
@@ -186,9 +196,10 @@
 
       <!-- Ant- no patológicos parte 2 -->
       <ion-list>
-        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px;">Datos habitacionales</ion-list-header>
+        <ion-list-header color="secondary" style="font-weight:bold; font-size: 13px; margin-top: 0px !important">Datos
+          habitacionales</ion-list-header>
 
-          <ion-list radio-group>
+        <ion-list radio-group>
           <ion-list-header>¿Dispone de servicio de luz?</ion-list-header>
           <ion-item>
             <ion-label>Si</ion-label>
@@ -433,12 +444,21 @@
           <ion-label color="primary" stacked>Vacunas</ion-label>
           <ion-input placeholder="Sin definir"></ion-input>
         </ion-item>
+
+        <ion-buttons>
+          <button ion-button rounded float-end>
+            Confirmar
+          </button>
+        </ion-buttons>
+
       </ion-list>
+
     </div>
     <!-- Antecedentes familiares -->
 
     <ion-list *ngIf="indiceDesdePopover == 3">
-      <ion-list-header color="dark" style="font-weight:bold; font-size: 16px;">Antecedentes familiares</ion-list-header>
+      <ion-list-header color="dark" style="font-weight:bold; font-size: 16px; margin-top: 0% !important;">Antecedentes
+        familiares</ion-list-header>
 
       <ion-item>
         <ion-label>Parentezco</ion-label>
@@ -494,6 +514,13 @@
         <ion-label color="primary" stacked>Descripción</ion-label>
         <ion-textarea placeholder="Sin definir"></ion-textarea>
       </ion-item>
+
+      <ion-buttons>
+        <button ion-button rounded float-end>
+          Confirmar
+        </button>
+      </ion-buttons>
+
     </ion-list>
     <!-- </div> -->
   </ion-card-content>
