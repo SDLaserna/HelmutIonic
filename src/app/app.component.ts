@@ -1,15 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, Events } from 'ionic-angular';
-
-import { HomePage } from '../pages/home/home';
-import { ConsultoriosPage } from '../pages/consultorios/consultorios';
 import { LoginPage } from './../pages/login/login';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { timer } from "rxjs/observable/timer";
-import { CalendarioPage } from '../pages/calendario/calendario';
-import { GestionDeTurnosPage } from '../pages/gestion-de-turnos/gestion-de-turnos';
-import { BuscarHistoriaClinicaPage } from '../pages/buscar-historia-clinica/buscar-historia-clinica';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -30,12 +25,9 @@ export class MyApp {
     // Tener cuidado que así como está si pongo alguno con hijos abajo de uno que si tiene,
     // no se visualiza
     this.pages = [
-      { title: 'Inicio', component: HomePage, hasChildren : false },
-      { title: 'Gestión de turnos', component: GestionDeTurnosPage, hasChildren:false},
-      { title: 'Historia Clínica', component:BuscarHistoriaClinicaPage , hasChildren: false},
-      { title: 'Calendario', component : CalendarioPage, hasChildren: false },
-      { title: 'Consultorios', component: ConsultoriosPage, hasChildren: true }
-      
+      { title: 'Inicio', component: 'HomePage', hasChildren : false },
+      { title: 'Gestión de turnos', component: 'BusquedaTurnoOpcPage', hasChildren: false},
+      { title: 'Historia Clínica', component:'BuscarHistoriaClinicaPage' , hasChildren: false}      
     ];
     this.listenToLoginEvents();
   }

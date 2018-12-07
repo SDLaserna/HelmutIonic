@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Seleccione una especialidad</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor='let especialidad of especialidades' #slidingItem (tap)="visualizar(especialidad)">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/profile_image.png">
+      </ion-avatar>
+      <h2>{{especialidad.nombre}}</h2>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

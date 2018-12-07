@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,5 +8,17 @@
 </ion-header>
 
 <ion-content>
-  <medico-lista></medico-lista>
+
+  <ion-searchbar></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor='let medico of medicos' (tap)="visualizarConfirmacion(medico)">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/profile_image.png">
+      </ion-avatar>
+      <h2>Nombre: {{medico.nombre}}</h2>
+      <p>Matrícula: {{medico.matricula}}</p>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

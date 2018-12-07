@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SeleccionDeTurnoPage } from '../seleccion-de-turno/seleccion-de-turno';
-
 
 @IonicPage()
 @Component({
@@ -35,7 +33,7 @@ export class CalendarioPage {
   onDaySelect(evento){
     // hay que considerar que este método retorna el mes enero como mes 0
     console.log(evento);
-    this.navCtrl.push(SeleccionDeTurnoPage,{objetoFecha: evento});
+    this.navCtrl.push('SeleccionDeTurnoPage',{objetoFecha: evento});
   }
   
 }

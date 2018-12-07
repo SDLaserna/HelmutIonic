@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HistoriaClinicaPage } from '../../pages/historia-clinica/historia-clinica';
-import { ModificarDatosPacientePage } from '../../pages/modificar-datos-paciente/modificar-datos-paciente';
 
-/**
- * Generated class for the PacienteListaComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+
 @Component({
   selector: 'paciente-lista',
   templateUrl: 'paciente-lista.html'
@@ -35,11 +28,11 @@ export class PacienteListaComponent {
   }
 
   verHistoriaClinica(pacienteParam){
-    this.navCtrl.push(HistoriaClinicaPage, {paciente : pacienteParam})
+    this.navCtrl.push('HistoriaClinicaPage', {paciente : pacienteParam})
   }
 
   editarDatosDelPaciente(pacienteParam){
-    this.navCtrl.push(ModificarDatosPacientePage, {paciente : pacienteParam});
+    this.navCtrl.push('ModificarDatosPacientePage', {paciente : pacienteParam});
   }
 
 }
