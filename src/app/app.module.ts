@@ -1,10 +1,10 @@
+import { HomePageModule } from './../pages/home/home.module';
 import { ListaEspecialidadesPageModule } from './../pages/lista-especialidades/lista-especialidades.module';
 import { BusquedaTurnoOpcPageModule } from './../pages/busqueda-turno-opc/busqueda-turno-opc.module';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { BrowserModule } from '@angular/platform-browser';
-import { HomePage } from '../pages/home/home';
 import { MyApp } from './app.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,12 +27,12 @@ import { HistoriaClinicaPageModule } from '../pages/historia-clinica/historia-cl
 import { BuscarHistoriaClinicaPageModule } from '../pages/buscar-historia-clinica/buscar-historia-clinica.module';
 import { ModificarDatosPacientePageModule } from '../pages/modificar-datos-paciente/modificar-datos-paciente.module';
 import { PopupDatosDelPacientePageModule } from '../pages/popup-datos-del-paciente/popup-datos-del-paciente.module';
+import { OpcBusquedaProfesionalPageModule } from '../pages/opc-busqueda-profesional/opc-busqueda-profesional.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
   ],
   imports: [
     BrowserModule,
@@ -54,12 +54,13 @@ import { PopupDatosDelPacientePageModule } from '../pages/popup-datos-del-pacien
     ModificarDatosPacientePageModule,
     PopupDatosDelPacientePageModule,
     BusquedaTurnoOpcPageModule,
-    ListaEspecialidadesPageModule
+    ListaEspecialidadesPageModule,
+    OpcBusquedaProfesionalPageModule,
+    HomePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,

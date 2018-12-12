@@ -2,12 +2,6 @@ import { PopupDatosDelPacientePage } from './../popup-datos-del-paciente/popup-d
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
-/**
- * Generated class for the ModificarDatosPacientePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

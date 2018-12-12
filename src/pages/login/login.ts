@@ -1,7 +1,6 @@
 import { AlertController, Events, IonicPage, Loading, LoadingController, NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
-import { HomePage } from '../home/home';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
@@ -34,7 +33,7 @@ export class LoginPage {
         console.log("inicio ssesion enviar a Home Page");
         this.showLoading();
 
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot('HomePage');
       }else{
         console.log("No se puede inicio sesion");
 

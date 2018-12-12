@@ -3,12 +3,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Historias clínicas</ion-title>
+    <ion-title text-center>Pacientes</ion-title>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
   <ion-searchbar></ion-searchbar>
-  <paciente-lista></paciente-lista>
+  <ion-list>
+    <ion-item-sliding *ngFor="let paciente of pacientes">
+      <ion-item>
+        <h2>{{paciente.nombre}}{{paciente.apellido}}</h2>
+        <p>Número de documento {{paciente.dni}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="verHistoriaClinica(paciente)">
+          <ion-icon name="medkit"></ion-icon>
+          Historia clínica
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="editarDatosDelPaciente(paciente)">
+          <ion-icon name="create"></ion-icon>
+          Modificar datos
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

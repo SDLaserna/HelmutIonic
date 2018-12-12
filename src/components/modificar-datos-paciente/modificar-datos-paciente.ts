@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PopoverController } from 'ionic-angular';
-import { PopupDatosDelPacientePage } from '../../pages/popup-datos-del-paciente/popup-datos-del-paciente';
+// import { PopupDatosDelPacientePage } from '../../pages/popup-datos-del-paciente/popup-datos-del-paciente';
 
 @Component({
   selector: 'modificar-datos-paciente',
@@ -30,19 +30,19 @@ export class ModificarDatosPacienteComponent {
 
 
 
-  // presentPopover(myEvent) {
-  //   let popover = this.popoverCtrl.create(PopupDatosDelPacientePage);
-  //   popover.present({
-  //     ev: myEvent
-  //   });
-  //   popover.onDidDismiss(
-  //     dato => {
-  //       console.log(dato);
-  //       this.indiceDesdePopover = dato;
-  //       console.log(this.indiceDesdePopover);
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create('PopupDatosDelPacientePage');
+    popover.present({
+      ev: myEvent
+    });
+    popover.onDidDismiss(
+      dato => {
+        console.log(dato);
+        this.indiceDesdePopover = dato;
+        console.log(this.indiceDesdePopover);
         
-  //     });
-  // }
+      });
+  }
 
 
 }

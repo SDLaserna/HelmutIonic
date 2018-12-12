@@ -15,12 +15,9 @@ export class BusquedaTurnoOpcPage {
     console.log('ionViewDidLoad BusquedaTurnoOpcPage');
   }
 
-  irAListaDeProfesionales(){
-    this.navCtrl.push('ListaDeMedicosPage');
+  irATipoDeBusqueda(){
+    this.navCtrl.push('OpcBusquedaProfesionalPage');
   }
 
-  irAListaDeEspecialidades(){
-    this.navCtrl.push('ListaEspecialidadesPage')
-  }
 
 }

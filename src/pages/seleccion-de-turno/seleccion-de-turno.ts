@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the SeleccionDeTurnoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-seleccion-de-turno',
@@ -59,6 +52,14 @@ export class SeleccionDeTurnoPage {
           text: 'Confirmar',
           handler: () => {
             console.log('Se confirmó el turno');
+            const infoReserva = this.alertCtrl.create({
+              title: 'Turno',
+              message: 'Turno Nro. 1 del día Jueves 13/12/2018 a las 08:00 para APELIDO9511, NOMBRE9511(42298745) Reservado por: APELIDO9511-9511, NOMBRE9511 (mlopez) el 12/12/2018               Profesional: APELIDO1459, NOMBRE1459 (vbaroli) Especialidad: Psicología Consultorio: Facultad de Agronomía (Calle 60 Y 118)',
+              buttons: [
+                { text: 'Ok' }
+              ]
+            });
+            infoReserva.present();
           }
         },
         {
