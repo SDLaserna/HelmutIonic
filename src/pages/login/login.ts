@@ -10,7 +10,7 @@ import { Slides } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  @ViewChild(Slides) slides: Slides;
+  // @ViewChild(Slides) slides: Slides;
   loading: Loading;
   // registerCredentials = { email: '', password: '' };
   user = {} as User;
@@ -91,13 +91,17 @@ export class LoginPage {
   //       this.showError(error);
   //     });
   // }
-  ngAfterViewInit() {
-    this.slides.startAutoplay();
-    this.slides.freeMode = true;
-    this.slides.effect= "fade";
-    this.slides.pager =true;
-    this.slides.loop = true;
-    this.slides.autoplayDisableOnInteraction=false;
-    this.slides.autoplay = 6000;
-  }
+
+
+  // ngAfterViewInit() {
+  //   this.slides.startAutoplay();
+  //   this.slides.freeMode = true;
+  //   this.slides.effect= "fade";
+  //   this.slides.pager =true;
+  //   this.slides.loop = true;
+  //   this.slides.autoplayDisableOnInteraction=false;
+  //   this.slides.autoplay = 6000;
+  // }
+
+
 }

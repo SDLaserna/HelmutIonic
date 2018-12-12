@@ -1,7 +1,6 @@
-import { PopupDatosDelPacientePage } from './../popup-datos-del-paciente/popup-datos-del-paciente';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
-
+import { isNullOrUndefined } from "util";
 
 @IonicPage()
 @Component({
@@ -9,6 +8,18 @@ import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-an
   templateUrl: 'modificar-datos-paciente.html',
 })
 export class ModificarDatosPacientePage {
+
+  calidad: string;
+  cantidadAlimentacion: string;
+  cantidadAlcohol: string;
+  frecuenciaAlcohol: string;
+  antecedenteAlcohol: string;
+  cantidadTabaco: string;
+  frecuenciaTabaco: string;
+  frecuenciaDeportes: string;
+  parentezco: string;
+  frecuenciaDeAlimentacion: string;
+
 
   pacienteParam : string;
   indiceDesdePopover: number = 0;
@@ -25,14 +36,16 @@ export class ModificarDatosPacientePage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopupDatosDelPacientePage);
+    let popover = this.popoverCtrl.create('PopupDatosDelPacientePage');
     popover.present({
       ev: myEvent
     });
     popover.onDidDismiss(
       dato => {
         console.log(dato);
-        this.indiceDesdePopover = dato;
+        if (!isNullOrUndefined(dato)) {
+          this.indiceDesdePopover = dato;
+        }
         console.log(this.indiceDesdePopover);
         
       });

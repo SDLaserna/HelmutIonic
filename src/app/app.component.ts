@@ -25,6 +25,7 @@ export class MyApp {
     // Tener cuidado que así como está si pongo alguno con hijos abajo de uno que si tiene,
     // no se visualiza
     this.pages = [
+      { title: 'Login', component: 'LoginPage', hasChildren: false},
       { title: 'Gestión de turnos', component: 'BusquedaTurnoOpcPage', hasChildren: false},
       { title: 'Gestión de usuarios', component:'BuscarHistoriaClinicaPage' , hasChildren: false}      
     ];
