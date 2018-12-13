@@ -7,6 +7,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-buscar-historia-clinica',
   templateUrl: 'buscar-historia-clinica.html',
 })
+
 export class BuscarHistoriaClinicaPage {
 
   pacientes: any = [{ nombre: 'Jiren', apellido: 'Alvarez', dni: '84513297' },
@@ -27,6 +28,7 @@ export class BuscarHistoriaClinicaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BuscarHistoriaClinicaPage');
   }
+
 
   verHistoriaClinica(pacienteParam){
     this.navCtrl.push('HistoriaClinicaPage', {paciente : pacienteParam})

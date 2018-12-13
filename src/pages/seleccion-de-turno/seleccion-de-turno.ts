@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import * as moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -11,8 +12,10 @@ export class SeleccionDeTurnoPage {
   // Podría usar el campo "duracion" para crear el arreglo de cantidad de líneas en base a eso dependiendo 
   //cada profesional
 
-  public cantidadDeLineas: Array<any> = new Array(48);
+  // public cantidadDeLineas: Array<any> = new Array(48);
+  
   paramFecha: string;
+  horario: string = "07:00"
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -23,7 +26,6 @@ export class SeleccionDeTurnoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeleccionDeTurnoPage');
     console.log("El parámetro recibido es: " + this.paramFecha);
-    this.cantidadDeLineas.fill(1);
   }
 
   // seleccionDeTurno(item, elemento:MouseEvent){
@@ -45,16 +47,16 @@ export class SeleccionDeTurnoPage {
     console.log("Abrir el diálogo de confirmación al igual que el votar de elektu");
 
     const confirm = this.alertCtrl.create({
-      title: '¿Desea confirmar el turno a las ' + elemento + ' ?',
-      // message: 'Acá se puede agregar un mensaje',
+      title: '¿Desea confirmar el siguiente turno?',
+       message: 'Dr. Juan Pablo Peralta, Oftalmología dia jueves 10 de enero a las'+ this.horario,
       buttons: [
         {
           text: 'Confirmar',
           handler: () => {
             console.log('Se confirmó el turno');
             const infoReserva = this.alertCtrl.create({
-              title: 'Turno',
-              message: 'Turno Nro. 1 del día Jueves 13/12/2018 a las 08:00 para APELIDO9511, NOMBRE9511(42298745) Reservado por: APELIDO9511-9511, NOMBRE9511 (mlopez) el 12/12/2018               Profesional: APELIDO1459, NOMBRE1459 (vbaroli) Especialidad: Psicología Consultorio: Facultad de Agronomía (Calle 60 Y 118)',
+              title: 'Turno confirmado',
+              message: 'Turno Nro. 1 del día Jueves 10/01/2019 a las '+this.horario+'hs para APELIDO9511, NOMBRE9511(42298745) Reservado por: APELIDO9511-9511, NOMBRE9511 (mlopez) el 12/12/2018               Profesional: APELIDO1459, NOMBRE1459 (vbaroli) Especialidad: Oftalmología Consultorio: Facultad de Agronomía (Calle 60 Y 118)',
               buttons: [
                 { text: 'Ok' }
               ]

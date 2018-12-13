@@ -9,32 +9,37 @@
 
 <ion-content>
 
-  <ion-item-group style="height: 78%;">
-  <ion-item>
-    <ion-avatar item-start>
-      <img src="../../assets/imgs/profile_image.png" />
-    </ion-avatar>
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>Paciente</ion-label>
-    <ion-input type="search" placeholder="Ingrese para buscar..."></ion-input>
-  </ion-item>
-  <ion-item style="height: 60%">
-    <ion-label stacked>Historia clínica</ion-label>
-    <ion-textarea readonly="true" placeholder="Sin especificar"></ion-textarea>
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>Libreta activa</ion-label>
-    <ion-input type="text" readonly="true"></ion-input>
-  </ion-item>
+  <ion-item-group>
+    <ion-item>
+      <ion-avatar>
+        <img src="../../assets/imgs/profile_image.png" />
+      </ion-avatar>
+    </ion-item>
 
-</ion-item-group>
+    <ion-item>
+      <ion-label stacked>Paciente</ion-label>
+      <ion-input type="search" placeholder="Ingrese para buscar..."></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Historia clínica</ion-label>
+      <ion-textarea readonly="true" placeholder="Sin especificar"></ion-textarea>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Libreta activa</ion-label>
+      <ion-input type="text" readonly="true"></ion-input>
+    </ion-item>
 
-  <ion-buttons no-margin style="position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 15%;">
-    <button ion-button full style="height: 100%;" (tap)="irATipoDeBusqueda()">Listo</button>
-  </ion-buttons>
+    <button ion-button full no-margin style="position: absolute;
+    bottom: 0;
+    height: 15%;" (tap)="irATipoDeBusqueda()">
+      Listo
+    </button>
+
+  </ion-item-group>
+    
+    
+
 
 </ion-content>

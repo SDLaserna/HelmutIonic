@@ -17,11 +17,6 @@ export class ConsultoriosServiceProvider {
   
   constructor(public httpClient: HttpClient, public http : HTTP) {
     console.log('Hello ConsultoriosServiceProvider Provider');
-    // this.headers.append('Authorization', 'Basic '+ this.token);
-    // this.headers.append('Accept', 'Application/json');
-    // let authorization = this.http.getBasicAuthHeader('user_guarani','123456');
-    // console.log(authorization);
-    // this.http.setHeader(this.url, 'Authorization', Authorization);
   }
 
 }

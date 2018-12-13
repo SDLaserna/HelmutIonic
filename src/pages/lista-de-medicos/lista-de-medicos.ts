@@ -10,22 +10,22 @@ export class ListaDeMedicosPage {
 
   especializacionABuscar : string;
 
-  medicos: any = [{ nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' },
-  { nombre: 'Dr. Cureta', matricula: '456789525' } ];
+  medicos: any = [{ nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' },
+  { nombre: 'Dr. Juan Pablo Peralta', matricula: '456789525' } ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.especializacionABuscar = navParams.get("especializacionABuscar");

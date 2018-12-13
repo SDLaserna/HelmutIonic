@@ -56,7 +56,8 @@ import { OpcBusquedaProfesionalPageModule } from '../pages/opc-busqueda-profesio
     BusquedaTurnoOpcPageModule,
     ListaEspecialidadesPageModule,
     OpcBusquedaProfesionalPageModule,
-    HomePageModule
+    HomePageModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
