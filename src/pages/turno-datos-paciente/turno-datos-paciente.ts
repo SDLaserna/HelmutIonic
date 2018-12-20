@@ -3,16 +3,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-busqueda-turno-opc',
-  templateUrl: 'busqueda-turno-opc.html',
+  selector: 'page-turno-datos-paciente',
+  templateUrl: 'turno-datos-paciente.html',
 })
-export class BusquedaTurnoOpcPage {
+export class TurnoDatosPacientePage {
 
+  obraSocial: string;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BusquedaTurnoOpcPage');
+    console.log('ionViewDidLoad TurnoDatosPacientePage');
   }
 
   irATipoDeBusqueda(){

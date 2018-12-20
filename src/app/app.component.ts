@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, Events } from 'ionic-angular';
-// import { LoginPage } from './../pages/login/login';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { timer } from "rxjs/observable/timer";
@@ -26,8 +25,8 @@ export class MyApp {
     // no se visualiza
     this.pages = [
       { title: 'Login', component: 'LoginPage', hasChildren: false},
-      { title: 'Gestión de turnos', component: 'BusquedaTurnoOpcPage', hasChildren: false},
-      { title: 'Gestión de usuarios', component:'BuscarHistoriaClinicaPage' , hasChildren: false}      
+      { title: 'Gestión de turnos', component: 'TurnoDatosPacientePage', hasChildren: false},
+      { title: 'Gestión de usuarios', component:'GestionPacientesPage' , hasChildren: false}      
     ];
     this.listenToLoginEvents();
   }
@@ -38,7 +37,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      timer(3000).subscribe(()=>this.mostrarAnimacionInicio=false);
+      timer(6000).subscribe(()=>this.mostrarAnimacionInicio=false);
 
     });
   }

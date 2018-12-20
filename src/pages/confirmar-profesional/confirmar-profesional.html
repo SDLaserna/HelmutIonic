@@ -7,14 +7,16 @@
 <ion-content>
   <ion-card style="position:absolute; height: 40%; margin-top:34%">
     <ion-card-title text-center>
-      Dr. Juan Pablo Peralta
+      {{profesionalParam.nombre}}
     </ion-card-title>
     <ion-card-content>
-      <p>Especialidad: Oftalmología</p>
-      <p>Matricula: 78654654</p>
+      <p>Especialidad: {{profesionalParam.especialidad}}</p>
+      <p>Matrícula:{{profesionalParam.matricula}}</p>
+      <p>Fecha: {{fechaParam.date}}/{{fechaParam.month}}/{{fechaParam.year}}</p>
+      <p>Horario: {{horarioParam}}</p>
     </ion-card-content>
   </ion-card>
-  <button no-margin ion-button full color="primary" end (tap)="visualizarDisponibilidad()" style="bottom:0; position:absolute; height: 13%;">
-     Confirmar
+  <button no-margin ion-button full color="primary" end (tap)="abreConfirmacionDeTurno()" style="bottom:0; position:absolute; height: 15%;">
+     Aceptar
   </button>
 </ion-content>

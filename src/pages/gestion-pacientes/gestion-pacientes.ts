@@ -4,11 +4,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-buscar-historia-clinica',
-  templateUrl: 'buscar-historia-clinica.html',
+  selector: 'page-gestion-pacientes',
+  templateUrl: 'gestion-pacientes.html',
 })
 
-export class BuscarHistoriaClinicaPage {
+export class GestionPacientesPage {
 
   pacientes: any = [{ nombre: 'Jiren', apellido: 'Alvarez', dni: '84513297' },
   { nombre: 'Makoto', apellido: 'Shishio', dni: '986456545' },
@@ -26,7 +26,7 @@ export class BuscarHistoriaClinicaPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuscarHistoriaClinicaPage');
+    console.log('ionViewDidLoad GestionPacientesPage');
   }
 
 

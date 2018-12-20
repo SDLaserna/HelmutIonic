@@ -20,6 +20,26 @@
       <ion-label stacked>Paciente</ion-label>
       <ion-input type="search" placeholder="Ingrese para buscar..."></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Obra social</ion-label>
+      <ion-select [(ngModel)]="obraSocial">
+        <ion-option value="obra0">PARTICULAR</ion-option>
+        <ion-option value="obra1">IOMA</ion-option>
+        <ion-option value="obra2">CASA</ion-option>
+        <ion-option value="obra3">OSDE</ion-option>
+        <ion-option value="obra4">OSPE</ion-option>
+        <ion-option value="obra5">OSOC1</ion-option>
+        <ion-option value="obra6">OSOC2</ion-option>
+        <ion-option value="obra7">OSOC3</ion-option>
+        <ion-option value="obra8">OSOC4</ion-option>
+        <ion-option value="obra9">OSOC5</ion-option>
+        <ion-option value="obra10">OSOC6</ion-option>
+        <ion-option value="obra11">OSOC7</ion-option>
+        <ion-option value="obra12">OSOC8</ion-option>
+        <ion-option value="obra13">OSOC9</ion-option>
+      </ion-select>
+    </ion-item>
     
     <ion-item>
       <ion-label stacked>Historia clínica</ion-label>
@@ -34,7 +54,7 @@
     <button ion-button full no-margin style="position: absolute;
     bottom: 0;
     height: 15%;" (tap)="irATipoDeBusqueda()">
-      Listo
+      Hecho
     </button>
 
   </ion-item-group>
